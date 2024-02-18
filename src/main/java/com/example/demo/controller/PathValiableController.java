@@ -3,6 +3,7 @@ package com.example.demo.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class PathValiableController {
@@ -31,6 +32,27 @@ public class PathValiableController {
 		}
 		//戻り値はビュー名を返す
 		return view;
+	}
+	
+	//ボタンAの押下処理
+	@PostMapping(value = "send", params = "a")
+	public String showAView()  {
+		//戻り値はビュー名を返す
+		return "submit/a";
+	}
+	
+	//ボタンBの押下処理
+	@PostMapping(value = "send", params = "b")
+	public String showBView()  {
+		//戻り値はビュー名を返す
+		return "submit/b";
+	}
+	
+	//ボタンCの押下処理
+	@PostMapping(value = "send", params = "c")
+	public String showCView()  {
+		//戻り値はビュー名を返す
+		return "submit/c";
 	}
 
 }
